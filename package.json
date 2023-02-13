@@ -1,0 +1,19 @@
+{
+  "name": "bootstrap-scss-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "purgecss --css src/assets/css/main.css --content src/*.html -o src/assets/css/main.css",
+    "dev": "sass --watch src/assets/sass/main.scss src/assets/css/main.css",
+    "start": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
