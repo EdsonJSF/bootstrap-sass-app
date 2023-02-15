@@ -1,8 +1,53 @@
 /* Mark input boxes that gets an error on validation: */
-input.invalid {
+$border-color: #888;
+
+textarea:focus,
+textarea:valid,
+input:focus,
+input:valid,
+select:focus,
+select.valid {
+  background-color: $light !important;
+}
+textarea:valid,
+input:valid,
+select.valid {
+  color: $primary;
+}
+textarea:focus,
+input:focus,
+select:focus {
+  border-color: #80bdff !important;
+  box-shadow: 0 0 3px 2px #80bdff !important;
+}
+select:focus option {
+  background-color: #ffffff !important;
+  color: #000;
+}
+select:focus option:first-child {
+  color: #aaaaaa;
+}
+input[type="radio"]:focus,
+input[type="radio"]:checked {
+  border-color: #007bff;
+  background-color: #007bff !important;
+}
+input[type="file"]:valid {
+  background-color: #ffffff !important;
+  color: #000;
+}
+input[type="file"].valid {
+  background-color: $light !important;
+  color: $primary;
+}
+textarea.invalid,
+input.invalid,
+select.invalid {
   background-color: #ffdddd;
 }
-input.invalid::placeholder {
+textarea.invalid::placeholder,
+input.invalid::placeholder,
+select.invalid::placeholder {
   color: #000;
 }
 
@@ -20,9 +65,8 @@ input.invalid::placeholder {
   content: "";
   position: absolute;
   top: 50%;
-  z-index: -1;
   width: 100%;
-  border-top: 1px solid black;
+  border-top: 1px solid $border-color;
 }
 
 /* Make circles that indicate the steps of the form: */
@@ -32,18 +76,20 @@ input.invalid::placeholder {
   margin: 0 2px;
   font-size: 0.8rem;
   background-color: #ffffff;
-  border: 1px solid black;
+  border: 1px solid $border-color;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: orange;
+  background-color: $primary;
+  color: white;
 }
 
 .step.active {
-  background-color: green;
+  background-color: $secondary;
 }
