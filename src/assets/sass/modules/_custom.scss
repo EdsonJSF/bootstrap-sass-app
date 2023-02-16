@@ -32,14 +32,14 @@ input[type="radio"]:checked {
   border-color: #007bff;
   background-color: #007bff !important;
 }
-input[type="file"]:valid {
-  background-color: #ffffff !important;
-  color: #000;
-}
-input[type="file"].valid {
-  background-color: $light !important;
-  color: $primary;
-}
+// input[type="file"]:valid {
+//   background-color: #ffffff !important;
+//   color: #000;
+// }
+// input[type="file"].valid {
+//   background-color: $light !important;
+//   color: $primary;
+// }
 textarea.invalid,
 input.invalid,
 select.invalid {

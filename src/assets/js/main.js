@@ -21,6 +21,7 @@ function showTab(n) {
   fixStepIndicator(n);
 }
 
+/* Set Values on final page */
 function setVisualValues() {
   const regForm = document.getElementById("regForm");
   const formData = new FormData(regForm);
@@ -61,14 +62,34 @@ function nextPrev(n) {
 
 document.querySelectorAll("select").forEach((select) => {
   select.addEventListener("change", (e) => {
+    e.target.classList.remove("invalid");
     e.target.classList.add("valid");
   });
 });
 
-document.querySelectorAll('input[type="file"]').forEach((inputFile) => {
-  inputFile.addEventListener("change", (e) => {
-    e.target.classList.add("valid");
-  });
+/* formCICPC Denuncia CICPC */
+document.getElementById("formCICPC").addEventListener("change", (e) => {
+  const value = e.target.value.toLocaleLowerCase();
+
+  const fechaDenuncia = document.getElementById("formFechaDenuncia");
+  const timeDenuncia = document.getElementById("formTimeDenuncia");
+  const fileDenuncia = document.getElementById("formFileDenuncia");
+  const fileRecaudos = document.getElementById("formFileRecaudos");
+
+  if (value === "si") {
+    fechaDenuncia.parentNode.parentNode.classList.remove("d-none");
+    fileDenuncia.parentNode.classList.remove("d-none");
+    fileRecaudos.parentNode.classList.remove("d-none");
+  } else {
+    fechaDenuncia.parentNode.parentNode.classList.add("d-none");
+    fileDenuncia.parentNode.classList.add("d-none");
+    fileRecaudos.parentNode.classList.add("d-none");
+
+    fechaDenuncia.value = "";
+    timeDenuncia.value = "";
+    fileDenuncia.value = "";
+    fileRecaudos.value = "";
+  }
 });
 
 function validateForm(type) {
@@ -84,9 +105,9 @@ function validateForm(type) {
   y = x[currentTab].getElementsByTagName(type);
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    if (y[i].type === "file") {
-      continue;
-    }
+    /* Ignore disable elements */
+    if (y[i].parentNode.classList.value.includes("d-none")) continue;
+    if (y[i].parentNode.parentNode.classList.value.includes("d-none")) continue;
 
     // If a field is empty...
     if (!y[i].value) {
