@@ -46,7 +46,7 @@
                 type="text"
                 id="formPlaca"
                 class="form-control"
-                name="placa"
+                name="formPlaca"
                 required
               />
             </div>
@@ -60,7 +60,7 @@
                 type="text"
                 id="formAsegurado"
                 class="form-control"
-                name="asegurado"
+                name="formAsegurado"
                 required
               />
             </div>
@@ -74,7 +74,7 @@
                 type="text"
                 id="formCorreo"
                 class="form-control"
-                name="correo"
+                name="formCorreo"
                 required
               />
             </div>
@@ -88,29 +88,32 @@
                 type="tel"
                 id="formTelefono"
                 class="form-control"
-                name="telefono"
+                name="formTelefono"
                 required
               />
             </div>
 
             <!-- Fecha/hora de ocurrencia -->
             <div class="mb-2">
-              <label for="formFecha" class="form-label text-primary mb-1">
+              <label
+                for="formFechaOcurrencia"
+                class="form-label text-primary mb-1"
+              >
                 Fecha/hora de ocurrencia
               </label>
               <div class="d-flex">
                 <input
                   type="date"
-                  id="formFecha1"
+                  id="formFechaOcurrencia"
                   class="form-control me-1 w-50 m-0"
-                  name="formFecha1"
+                  name="formFechaOcurrencia"
                   required
                 />
                 <input
                   type="time"
-                  id="formTime1"
+                  id="formTimeOcurrencia"
                   class="form-control ms-sm-1 w-50 m-0"
-                  name="formTime1"
+                  name="formTimeOcurrencia"
                   required
                 />
               </div>
@@ -125,37 +128,46 @@
 
             <div class="form-check">
               <input
-                class="form-check-input"
                 type="radio"
+                id="formTipoIncidente1"
+                class="form-check-input"
                 name="formTipoIncidente"
-                id="formRadio1"
-                value="1"
+                value="Únicamente daños de vidrio de su vehículo"
               />
-              <label class="form-check-label text-primary" for="formRadio1">
+              <label
+                class="form-check-label text-primary"
+                for="formTipoIncidente1"
+              >
                 Únicamente daños de vidrio de su vehículo
               </label>
             </div>
             <div class="form-check">
               <input
-                class="form-check-input"
                 type="radio"
+                id="formTipoIncidente2"
+                class="form-check-input"
                 name="formTipoIncidente"
-                id="formRadio2"
-                value="2"
+                value="Accidente / Colisíon / Vandalismo / Otros"
               />
-              <label class="form-check-label text-primary" for="formRadio2">
+              <label
+                class="form-check-label text-primary"
+                for="formTipoIncidente2"
+              >
                 Accidente / Colisíon / Vandalismo / Otros
               </label>
             </div>
             <div class="form-check">
               <input
-                class="form-check-input"
                 type="radio"
+                id="formTipoIncidente3"
+                class="form-check-input"
                 name="formTipoIncidente"
-                id="formRadio3"
-                value="3"
+                value="Robo / Hurto de Vehículo"
               />
-              <label class="form-check-label text-primary" for="formRadio3">
+              <label
+                class="form-check-label text-primary"
+                for="formTipoIncidente3"
+              >
                 Robo / Hurto de Vehículo
               </label>
             </div>
@@ -169,15 +181,10 @@
 
             <!-- Estado -->
             <div class="mb-2">
-              <label for="estado" class="form-label text-primary mb-1">
+              <label for="formEstado" class="form-label text-primary mb-1">
                 Estado
               </label>
-              <select
-                id="estado"
-                name="estado"
-                class="form-select"
-                aria-label="Default select example"
-              >
+              <select id="formEstado" class="form-select" name="formEstado">
                 <option selected disabled value="">Seleccione un Estado</option>
                 <option value="Barinas">Barinas</option>
                 <option value="Tachira">Tachira</option>
@@ -187,15 +194,10 @@
 
             <!-- Ciudad -->
             <div class="mb-2">
-              <label for="ciudad" class="form-label text-primary mb-1">
+              <label for="formCiudad" class="form-label text-primary mb-1">
                 Ciudad
               </label>
-              <select
-                id="ciudad"
-                name="ciudad"
-                class="form-select"
-                aria-label="Default select example"
-              >
+              <select id="formCiudad" class="form-select" name="formCiudad">
                 <option selected disabled value="">Seleccione un Ciudad</option>
                 <option value="Barinitas">Barinitas</option>
                 <option value="Tachirita">Tachirita</option>
@@ -205,15 +207,10 @@
 
             <!-- CICPC -->
             <div class="mb-2">
-              <label for="CICPC" class="form-label text-primary mb-1">
+              <label for="formCICPC" class="form-label text-primary mb-1">
                 ¿Se realizó denuncia en el CICPC?
               </label>
-              <select
-                id="CICPC"
-                name="CICPC"
-                class="form-select"
-                aria-label="Default select example"
-              >
+              <select id="formCICPC" class="form-select" name="formCICPC">
                 <option selected disabled value="">Seleccione</option>
                 <option value="Si">Si</option>
                 <option value="No">No</option>
@@ -222,22 +219,25 @@
 
             <!-- Fecha/hora de la denuncia -->
             <div class="mb-2">
-              <label for="formFecha" class="form-label text-primary mb-1">
+              <label
+                for="formFechaDenuncia"
+                class="form-label text-primary mb-1"
+              >
                 Fecha/hora de la denuncia
               </label>
               <div class="d-flex">
                 <input
                   type="date"
-                  id="formFecha2"
+                  id="formFechaDenuncia"
                   class="form-control me-1 w-50 m-0"
-                  name="formFecha2"
+                  name="formFechaDenuncia"
                   required
                 />
                 <input
                   type="time"
-                  id="formTime2"
+                  id="formTimeDenuncia"
                   class="form-control ms-sm-1 w-50 m-0"
-                  name="formTime2"
+                  name="formTimeDenuncia"
                   required
                 />
               </div>
@@ -252,40 +252,49 @@
 
             <!-- Documento Denuncia CICPC -->
             <div class="mb-2">
-              <label for="formFile1" class="form-label text-primary mb-1 fs-6">
+              <label
+                for="formFileDenuncia"
+                class="form-label text-primary mb-1 fs-6"
+              >
                 Adjunte el documento Denuncia CICPC (si lo tiene)
               </label>
               <input
-                class="form-control"
                 type="file"
-                id="formFile1"
-                name="formFile1"
+                id="formFileDenuncia"
+                class="form-control"
+                name="formFileDenuncia"
               />
             </div>
 
             <!-- Recaudos por robo de vehiculo -->
             <div class="mb-2">
-              <label for="formFile2" class="form-label text-primary mb-1 fs-6">
+              <label
+                for="formFileRecaudos"
+                class="form-label text-primary mb-1 fs-6"
+              >
                 Adjunte la planilla de recaudos por robo de vehiculo (si lo
                 tiene)
               </label>
               <input
-                class="form-control"
                 type="file"
-                id="formFile2"
-                name="formFile2"
+                id="formFileRecaudos"
+                class="form-control"
+                name="formFileRecaudos"
               />
             </div>
 
             <!-- Describa brevemente lo ocurrido -->
             <div class="mb-2">
-              <label for="ocurrido" class="form-label text-primary mb-1 fs-6">
+              <label
+                for="formOcurrido"
+                class="form-label text-primary mb-1 fs-6"
+              >
                 Describa brevemente lo ocurrido
               </label>
               <textarea
+                id="formOcurrido"
                 class="form-control"
-                id="ocurrido"
-                name="ocurrido"
+                name="formOcurrido"
                 required
               ></textarea>
             </div>
@@ -302,22 +311,22 @@
                 <div class="row">
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Nombre</h6>
-                    <p class="ms-4 text-muted">nombre nombre nombre nombre</p>
+                    <p id="showAsegurado" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Correo Electrónico</h6>
-                    <p class="ms-4 text-muted">Correo Electrónico</p>
+                    <p id="showCorreo" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Documento de identidad</h6>
-                    <p class="ms-4 text-muted">Documento de identidad</p>
+                    <p id="showDNI" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Celular</h6>
-                    <p class="ms-4 text-muted">Celular</p>
+                    <p id="showTelefono" class="ms-4 text-muted"></p>
                   </div>
                 </div>
               </div>
@@ -329,42 +338,51 @@
                 <div class="row">
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Fecha Ocurrencia</h6>
-                    <p class="ms-4 text-muted">Fecha Ocurrencia</p>
+                    <p class="ms-4 text-muted">
+                      <span id="showFechaOcurrencia"></span>
+                      <span id="showTimeOcurrencia"></span>
+                    </p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Incidente Reportado</h6>
-                    <p class="ms-4 text-muted">Incidente Reportado</p>
+                    <p id="showTipoIncidente" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Placa del Vehículo</h6>
-                    <p class="ms-4 text-muted">Placa del Vehículo</p>
+                    <p id="showPlaca" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Lugar del robo</h6>
-                    <p class="ms-4 text-muted">Lugar del robo</p>
+                    <p class="ms-4 text-muted">
+                      <span id="showEstado"></span>
+                      <span id="showCiudad"></span>
+                    </p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Denuncia CICPC</h6>
-                    <p class="ms-4 text-muted">Denuncia CICPC</p>
+                    <p id="showCICPC" class="ms-4 text-muted"></p>
                   </div>
 
                   <div class="col-sm-6 col-md-12 col-lg-6">
                     <h6>Fecha Denuncia CICPC</h6>
-                    <p class="ms-4 text-muted">Fecha Denuncia CICPC</p>
+                    <p class="ms-4 text-muted">
+                      <span id="showFechaDenuncia"></span>
+                      <span id="showTimeDenuncia"></span>
+                    </p>
                   </div>
                   <div>
                     <h6>Descripción</h6>
                     <textarea
+                      id="showOcurrido"
                       class="form-control text-primary"
                       disabled
                       readonly
                     >
-asdfsa</textarea
-                    >
+                    </textarea>
                   </div>
                 </div>
               </div>
