@@ -60,6 +60,7 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
+/* onChange select to valid elements */
 document.querySelectorAll("select").forEach((select) => {
   select.addEventListener("change", (e) => {
     e.target.classList.remove("invalid");
@@ -67,7 +68,7 @@ document.querySelectorAll("select").forEach((select) => {
   });
 });
 
-/* formCICPC Denuncia CICPC */
+/* Check formCICPC (Si / No) options*/
 document.getElementById("formCICPC").addEventListener("change", (e) => {
   const value = e.target.value.toLocaleLowerCase();
 
