@@ -1,37 +1,31 @@
-# Bootstrap SCSS App
+# Bootstrap Sass App
 
-## Project setup
+A simple boilerplate for a web app using Bootstrap 5, SASS, live-server, and PurgeCSS.
 
-```
+## Installation
+
+Clone this repository to your local machine and install the dependencies with
+
+```code
 npm install
 ```
 
-### Compiles and hot-reloads for development
-
-#### Install Visual Studio Extencions Recomended
-
-- <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a>
-
-### Compiles and minifies for production
-
-#### This makes a file in "assets/css/main.css" whith a css reduced
-
+```code
+npm i
 ```
+
+## Usage - Compiles and hot-reloads for development
+
+To start a development server with automatic reloading
+
+```code
+npm run dev
+```
+
+## Compiles, minifies for production and minimize Css
+
+To build the project for production use
+
+```code
 npm run build
-```
-
-### Dependencias globales
-
-#### SASS - <a href="https://sass-lang.com/">Go Documentation</a>
-<a href="https://sass-lang.com/install">Usage SASS</a>
-
-```
-npm install -g sass
-```
-
-#### PurgeCSS - <a href="https://purgecss.com/">Go Documentation</a>
-<a href="https://purgecss.com/CLI.html">Usage PurgeCSS</a>
-
-```
-npm i -g purgecss
 ```
