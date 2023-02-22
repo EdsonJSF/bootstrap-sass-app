@@ -1,20 +1,11 @@
-interface VenezuelaJSON {
-  estado: string;
-  id_estado: number;
-  ciudades: string[];
-}
-
 const venezuelaJSON = async () => {
-  const res = await fetch('./assets/json/venezuela.json');
-  const result: VenezuelaJSON[] = await res.json();
+  const res = await fetch("./assets/json/venezuela.json");
+  const result = await res.json();
   addSelectFn(result);
 };
 
-const addSelectFn = (vnzlaJSON: VenezuelaJSON[]) => {
-  const formEstado: HTMLInputElement | null =
-    document.querySelector('#formEstado');
-
-  if (!formEstado) return;
+const addSelectFn = (vnzlaJSON) => {
+  const formEstado = document.getElementById("formEstado");
 
   formEstado.innerHTML = /* html */ `
     <option selected disabled value="">
@@ -22,7 +13,7 @@ const addSelectFn = (vnzlaJSON: VenezuelaJSON[]) => {
     </option>
   `;
 
-  let estados = '';
+  let estados = "";
   vnzlaJSON.forEach(({ estado }) => {
     estados += /* html */ `
       <option value="${estado}">
@@ -32,13 +23,9 @@ const addSelectFn = (vnzlaJSON: VenezuelaJSON[]) => {
   });
   formEstado.innerHTML += estados;
 
-  formEstado.addEventListener('change', () => {
-    const formCiudad: HTMLInputElement | null =
-      document.querySelector('#formCiudad');
-
-    if (!formCiudad) return;
-
-    formCiudad.value = '';
+  formEstado.addEventListener("change", () => {
+    const formCiudad = document.getElementById("formCiudad");
+    formCiudad.value = "";
 
     formCiudad.innerHTML = /* html */ `
       <option selected disabled value="">
@@ -50,7 +37,7 @@ const addSelectFn = (vnzlaJSON: VenezuelaJSON[]) => {
       ({ estado }) => estado === formEstado.value
     )[0];
 
-    let ciudades = '';
+    let ciudades = "";
     estadoSelected.ciudades.forEach((ciudad) => {
       ciudades += /* html */ `
       <option value="${ciudad}">
@@ -60,8 +47,8 @@ const addSelectFn = (vnzlaJSON: VenezuelaJSON[]) => {
     });
     formCiudad.innerHTML += ciudades;
 
-    formCiudad.classList.remove('invalid');
-    formCiudad.classList.remove('valid');
+    formCiudad.classList.remove("invalid");
+    formCiudad.classList.remove("valid");
   });
 };
 

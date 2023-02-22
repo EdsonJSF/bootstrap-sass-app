@@ -1,4 +1,4 @@
-# Bootstrap Sass TS App
+# Bootstrap Sass App
 
 A simple boilerplate for a web app using Bootstrap 5, SASS, live-server, and PurgeCSS.
 

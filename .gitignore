@@ -22,5 +22,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+# css
 src/assets/css
-src/assets/js
