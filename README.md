@@ -22,10 +22,18 @@ To start a development server with automatic reloading
 npm run dev
 ```
 
-## Compiles, minifies for production and minimize Css
+## Compiles, minifies Css for production
 
 To build the project for production use
 
 ```code
 npm run build
+```
+
+## Just compiles Css
+
+To get all css for production use
+
+```code
+npm run start
 ```

@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "purgecss --css src/assets/css/main.css --content src/*.html -o src/assets/css/main.css",
+    "build:purge": "purgecss --css src/assets/css/main.css --content src/*.html -o src/assets/css/main.css",
+    "build": "npm run start && npm run build:purge",
     "dev:html": "npx live-server src",
+    "dev:custom": "node-sass --watch src/assets/sass/global.scss src/assets/css/global.css",
     "dev:css": "node-sass --watch src/assets/sass/main.scss src/assets/css/main.css",
-    "dev": "concurrently npm:dev:*",
-    "start": ""
+    "dev": "npm run start && concurrently npm:dev:*",
+    "start:custom": "node-sass src/assets/sass/global.scss src/assets/css/global.css",
+    "start:css": "node-sass src/assets/sass/main.scss src/assets/css/main.css",
+    "start": "rimraf src/assets/css && concurrently npm:start:*"
   },
   "keywords": [],
   "author": "",
