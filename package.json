@@ -4,12 +4,12 @@
   "description": "",
   "scripts": {
     "build:purge": "purgecss --css src/assets/css/main.css --content src/*.html -o src/assets/css/main.css",
-    "build": "concurrently npm:start:* && concurrently npm:build:*",
+    "build": "npm run start && npm run build:purge",
 
     "dev:custom": "node-sass --watch src/assets/sass/custom.scss src/assets/css/custom.css",
     "dev:html": "npx live-server src",
     "dev:css": "node-sass --watch src/assets/sass/main.scss src/assets/css/main.css",
-    "dev": "concurrently npm:start:* && concurrently npm:dev:*",
+    "dev": "npm run start && concurrently npm:dev:*",
 
     "start:custom": "node-sass src/assets/sass/custom.scss src/assets/css/custom.css",
     "start:css": "node-sass src/assets/sass/main.scss src/assets/css/main.css",
