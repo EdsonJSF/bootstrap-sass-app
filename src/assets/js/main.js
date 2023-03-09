@@ -4,17 +4,15 @@ const triggers = Array.from(
   document.querySelectorAll('[data-toggle="collapse"]')
 );
 
-window.addEventListener(
-  "click",
-  (ev) => {
-    const elm = ev.target;
-    if (triggers.includes(elm)) {
-      const selector = elm.getAttribute("data-target");
-      collapse(selector, "toggle");
-    }
-  },
-  false
-);
+triggers.forEach((el) => {
+  el.addEventListener("click", () => {
+    const arrow = el.querySelector(".arrow");
+    arrow.classList.toggle("rotate");
+
+    const selector = el.getAttribute("data-target");
+    collapse(selector, "toggle");
+  });
+});
 
 const fnmap = {
   toggle: "toggle",

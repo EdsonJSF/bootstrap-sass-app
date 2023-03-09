@@ -18,38 +18,82 @@
     />
   </head>
   <body>
-    <div id="root"></div>
-
-    <button
-      class="btn btn-primary btn__first"
+    <div
+      class="block"
       data-toggle="collapse"
-      data-target=".collapse.first"
+      data-target=".collapse.servFinanc"
       data-text="Collapse"
     >
-      Toggle First
-    </button>
-    <button
-      class="btn btn-primary btn__first"
-      data-toggle="collapse"
-      data-target=".collapse.second"
-      data-text="Collapse"
-    >
-      Toggle Second
-    </button>
-    <button
-      class="btn btn-primary btn__first"
-      data-toggle="collapse"
-      data-target=".collapse"
-      data-text="Collapse"
-    >
-      Toggle All
-    </button>
-
-    <div class="block collapse first">
-      <div class="block__content">I'm the first content!</div>
+      <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+      <p class="w-100 m-0 ms-3">
+        Mercantil Servicios<br />
+        Financieros 1
+      </p>
+      <img
+        class="arrow"
+        src="./assets/img/arrow-blue.png"
+        alt="collapse arrow"
+      />
     </div>
-    <div class="block collapse second">
-      <div class="block__content">I'm the second content!</div>
+    <div class="block__child collapse servFinanc">
+      <div
+        class="block"
+        data-toggle="collapse"
+        data-target=".collapse.servFinanc2"
+        data-text="Collapse"
+      >
+        <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+        <p class="w-100 m-0 ms-3">
+          Mercantil Servicios<br />
+          Financieros 2
+        </p>
+        <img
+          class="arrow"
+          src="./assets/img/arrow-blue.png"
+          alt="collapse arrow"
+        />
+      </div>
+      <div class="block__child collapse servFinanc2">
+        <div class="block">
+          <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+          <p class="w-100 m-0 ms-3">
+            Mercantil Servicios<br />
+            Financieros 3
+          </p>
+        </div>
+        <div class="block">
+          <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+          <p class="w-100 m-0 ms-3">
+            Mercantil Servicios<br />
+            Financieros 3
+          </p>
+        </div>
+      </div>
+
+      <!-- Extra Blocks -->
+      <div class="block__child">
+        <div class="block extra">
+          <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+          <p class="w-100 m-0 ms-3">
+            Mercantil Servicios<br />
+            Financieros 4
+          </p>
+        </div>
+        <div class="block extra">
+          <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+          <p class="w-100 m-0 ms-3">
+            Mercantil Servicios<br />
+            Financieros 5
+          </p>
+        </div>
+        <div class="block extra">
+          <img src="./assets/img/flag-panama-circle.png" alt="panama's flag" />
+          <p class="w-100 m-0 ms-3">
+            Mercantil Servicios<br />
+            Financieros 6
+          </p>
+        </div>
+      </div>
     </div>
 
     <script src="./assets/js/main.js"></script>

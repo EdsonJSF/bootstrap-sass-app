@@ -1,1 +1,68 @@
-// This file will not compile with purgecss
+.collapse {
+  position: relative;
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 1.5rem;
+    height: calc(100% - 6rem);
+    border-left: 1px solid #0d6efd;
+  }
+
+  &.show {
+    max-height: 99em;
+    transition: max-height 0.5s ease-in-out;
+  }
+}
+
+.block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 0.9375rem #0000001a;
+  z-index: 1;
+
+  img {
+    width: auto;
+    height: auto;
+  }
+}
+
+.block__child {
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+
+  & .block {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -1.5rem;
+      width: 1.5rem;
+      height: calc(100% - 3rem);
+      border-left: 1px solid #0d6efd;
+      border-bottom: 1px solid #0d6efd;
+      border-radius: 0 0 0 30px;
+    }
+    &.extra::before {
+      left: -4.5rem;
+      width: 4.5rem;
+    }
+  }
+}
+
+.arrow {
+  transition: transform 0.5s ease;
+  &.rotate {
+    transform: rotate(90deg);
+  }
+}
