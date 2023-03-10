@@ -6,6 +6,7 @@ const triggers = Array.from(
 
 triggers.forEach((el) => {
   el.addEventListener("click", () => {
+    el.classList.toggle("active");
     const arrow = el.querySelector(".arrow");
     arrow.classList.toggle("rotate");
 

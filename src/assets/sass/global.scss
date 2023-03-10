@@ -5,13 +5,14 @@
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 
+  /* FULL LEFT LINE */
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 1px;
     width: 1.5rem;
-    height: calc(100% - 6rem);
+    height: calc(100% - 5rem);
     border-left: 1px solid #0d6efd;
   }
 
@@ -31,6 +32,11 @@
   box-shadow: 0 0.25rem 0.9375rem #0000001a;
   z-index: 1;
 
+  &.active {
+    background-color: #edf6ff;
+    border-color: #00549a;
+  }
+
   img {
     width: auto;
     height: auto;
@@ -42,6 +48,7 @@
   padding-left: 1.5rem;
 
   & .block {
+    /* SEMI CIRCLE LINE */
     &::before {
       content: "";
       position: absolute;
@@ -53,6 +60,8 @@
       border-bottom: 1px solid #0d6efd;
       border-radius: 0 0 0 30px;
     }
+
+    /* SEMI CIRCLE LINE WITH SPACE*/
     &.extra::before {
       left: -4.5rem;
       width: 4.5rem;
