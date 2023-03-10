@@ -1,1 +1,95 @@
-// This file will not compile with purgecss
+/* BOX MODEL */
+.d-flex {
+  display: flex;
+}
+.d-none {
+  display: none;
+}
+.flex-column {
+  flex-direction: column;
+}
+.align-items-center {
+  align-items: center;
+}
+.ms-7px {
+  margin-left: 7px;
+}
+
+/* BACKGROUND COLORS */
+.bg-fff {
+  background-color: #fff;
+}
+.bg-bcd3ed {
+  background-color: #bcd3ed;
+}
+.bg-e2edf9 {
+  background-color: #e2edf9;
+}
+.bg-00549a {
+  background-color: #00549a;
+}
+
+/* TEXTS COLORS */
+.text-878787 {
+  color: #878787;
+}
+.text-9db7d6 {
+  color: #9db7d6;
+}
+
+.fs-10px {
+  font-size: 0.625rem;
+}
+
+/* AUDIO CONTROLS */
+.audio-controls {
+  width: 304px;
+  padding: 1px;
+}
+
+/* AUDIO CONTROLS HEADER & FOOTER */
+.audio-controls-header,
+.audio-controls-footer {
+  height: 3rem;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 12px rgba(20, 53, 107, 0.1);
+}
+
+/* AUDIO CONTROLS HEADER */
+.audio-controls-header {
+  border-radius: 8px 8px 0 0;
+}
+
+/* AUDIO CONTROLS FOOTER */
+.audio-controls-footer {
+  border-radius: 0 0 8px 30px;
+}
+.audio-controls-footer .play-bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  margin: 0 20px;
+  border-radius: 50px;
+}
+
+.audio-controls-footer .play-bar .bar,
+.audio-controls-footer .play-bar .dot {
+  position: relative;
+}
+
+.audio-controls-footer .play-bar .bar {
+  top: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: 50px;
+}
+.audio-controls-footer .play-bar .dot {
+  top: -0.55rem;
+  left: -0.45rem;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+}
