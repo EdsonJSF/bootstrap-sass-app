@@ -60,39 +60,6 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
-/* onChange select to valid elements */
-document.querySelectorAll("select").forEach((select) => {
-  select.addEventListener("change", (e) => {
-    e.target.classList.remove("invalid");
-    e.target.classList.add("valid");
-  });
-});
-
-/* Check formCICPC (Si / No) options*/
-document.getElementById("formCICPC").addEventListener("change", (e) => {
-  const value = e.target.value.toLocaleLowerCase();
-
-  const fechaDenuncia = document.getElementById("formFechaDenuncia");
-  const timeDenuncia = document.getElementById("formTimeDenuncia");
-  const fileDenuncia = document.getElementById("formFileDenuncia");
-  const fileRecaudos = document.getElementById("formFileRecaudos");
-
-  if (value === "si") {
-    fechaDenuncia.parentNode.parentNode.classList.remove("d-none");
-    fileDenuncia.parentNode.classList.remove("d-none");
-    fileRecaudos.parentNode.classList.remove("d-none");
-  } else {
-    fechaDenuncia.parentNode.parentNode.classList.add("d-none");
-    fileDenuncia.parentNode.classList.add("d-none");
-    fileRecaudos.parentNode.classList.add("d-none");
-
-    fechaDenuncia.value = "";
-    timeDenuncia.value = "";
-    fileDenuncia.value = "";
-    fileRecaudos.value = "";
-  }
-});
-
 function validateForm(type) {
   // This function deals with validation of the form fields
   var x,
@@ -106,10 +73,6 @@ function validateForm(type) {
   y = x[currentTab].getElementsByTagName(type);
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    /* Ignore disable elements */
-    if (y[i].parentNode.classList.value.includes("d-none")) continue;
-    if (y[i].parentNode.parentNode.classList.value.includes("d-none")) continue;
-
     // If a field is empty...
     if (!y[i].value) {
       // add an "invalid" class to the field:
